@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ace1316dbd24d9ba38ccb1359f755e2" Name="Diagram1">
+        <EntityTypeShape EntityType="ProbeDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.AspNetRole" Width="1.5" PointX="5.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.AspNetUser" Width="1.5" PointX="8" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.DomainUsersInfo" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_DetailInfo" Width="1.5" PointX="5.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_IpMacAddress" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_MasterInfo" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_Sw_Installed" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_Sw_Running" Width="1.5" PointX="5.25" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_Sw_Services" Width="1.5" PointX="5.25" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Hw_Type" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_Schedule" Width="1.5" PointX="6" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_Setting" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_Site" Width="1.5" PointX="0.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_SiteCredential" Width="1.5" PointX="3" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_Status" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProbeDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="ProbeDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_DetailInfo_Hw_MasterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_IpMacAddress_Hw_MasterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_MasterInfo_Hw_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_MasterInfo_Prb_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_MasterInfo_Prb_Site" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_Sw_Installed_Hw_MasterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_Sw_Running_Hw_MasterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Hw_Sw_Services_Hw_MasterInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Prb_Schedule_Prb_Setting" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Prb_Schedule_Prb_Site" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.FK_Prb_SiteCredential_Prb_Site" ManuallyRouted="false" />
+        <AssociationConnector Association="ProbeDBModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ProbeDBModel.Prb_ADConnectionFailure" Width="1.5" PointX="6" PointY="11.75" />
+        <AssociationConnector Association="ProbeDBModel.FK__Prb_ADCon__Setti__06ED0088" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

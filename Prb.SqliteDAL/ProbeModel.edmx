@@ -1,0 +1,1936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProbeDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomainUsersInfo">
+          <Key>
+            <PropertyRef Name="DomainUsersInfoId" />
+          </Key>
+          <Property Name="DomainUsersInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" />
+          <Property Name="ScheduleId" Type="int" Nullable="false" />
+          <Property Name="SamAccountName" Type="varchar(max)" />
+          <Property Name="DisplayName" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="GivenName" Type="varchar(max)" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Enabled" Type="bit" />
+          <Property Name="EmployeeId" Type="varchar(max)" />
+          <Property Name="LastPasswordSet" Type="datetime" />
+          <Property Name="LastBadPasswordAttempt" Type="datetime" />
+          <Property Name="LastLogon" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Hw_DetailInfo">
+          <Key>
+            <PropertyRef Name="HwDetailInfoId" />
+          </Key>
+          <Property Name="HwDetailInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwMasterInfoId" Type="int" Nullable="false" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="HwManufacturer" Type="nvarchar(max)" />
+          <Property Name="HwCaption" Type="nvarchar(max)" />
+          <Property Name="HwDescription" Type="nvarchar(max)" />
+          <Property Name="HwSerialNo" Type="nvarchar(max)" />
+          <Property Name="HwStatus" Type="nvarchar(max)" />
+          <Property Name="HwVersion" Type="nvarchar(max)" />
+          <Property Name="HwModelNo" Type="nvarchar(max)" />
+          <Property Name="HwPartNo" Type="nvarchar(max)" />
+          <Property Name="HwSystemType" Type="nvarchar(max)" />
+          <Property Name="OS" Type="nvarchar(max)" />
+          <Property Name="Processor" Type="nvarchar(max)" />
+          <Property Name="PhysicalMemory" Type="nvarchar(max)" />
+          <Property Name="NoOfProcessors" Type="int" />
+          <Property Name="NoOfLogicalProcessors" Type="int" />
+          <Property Name="DNSHostName" Type="nvarchar(max)" />
+          <Property Name="DomainName" Type="nvarchar(max)" />
+          <Property Name="CurrentTimeZone" Type="nvarchar(max)" />
+          <Property Name="CurrentLanguages" Type="nvarchar(max)" />
+          <Property Name="ListOfAvailableLanguages" Type="nvarchar(max)" />
+          <Property Name="InstalableLanguage" Type="int" />
+          <Property Name="BiosName" Type="nvarchar(max)" />
+          <Property Name="BiosVersion" Type="nvarchar(max)" />
+          <Property Name="BiosSerialNo" Type="nvarchar(max)" />
+          <Property Name="BiosStatus" Type="nvarchar(max)" />
+          <Property Name="BiosDisplayConfiguration" Type="nvarchar(max)" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="VmInstanceName" Type="nvarchar(max)" />
+          <Property Name="VmInstanceStatus" Type="nvarchar(max)" />
+          <Property Name="IsVirtual" Type="bit" />
+          <Property Name="IsServerRole" Type="bit" />
+          <Property Name="WebServer" Type="nvarchar(max)" />
+          <Property Name="MailServer" Type="nvarchar(max)" />
+          <Property Name="CMS_SharePoint" Type="nvarchar(max)" />
+          <Property Name="DatabaseServer" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_IpMacAddress">
+          <Key>
+            <PropertyRef Name="SwServiceId" />
+          </Key>
+          <Property Name="SwServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwMasterInfoId" Type="int" Nullable="false" />
+          <Property Name="Caption" Type="nvarchar(max)" />
+          <Property Name="IpAddress" Type="nvarchar(max)" />
+          <Property Name="IPEnabled" Type="nvarchar(max)" />
+          <Property Name="MacAddress" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_MasterInfo">
+          <Key>
+            <PropertyRef Name="HwMasterInfoId" />
+          </Key>
+          <Property Name="HwMasterInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="ScheduleId" Type="int" Nullable="false" />
+          <Property Name="HwTypeId" Type="int" Nullable="false" />
+          <Property Name="DevType" Type="nvarchar(max)" />
+          <Property Name="DevCategory" Type="nvarchar(max)" />
+          <Property Name="ComType" Type="nvarchar(max)" />
+          <Property Name="HwName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="MacAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Installed">
+          <Key>
+            <PropertyRef Name="SwInstalledId" />
+          </Key>
+          <Property Name="SwInstalledId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwMasterInfoId" Type="int" Nullable="false" />
+          <Property Name="SwName" Type="nvarchar(max)" />
+          <Property Name="SwDescription" Type="nvarchar(max)" />
+          <Property Name="SwType" Type="nvarchar(max)" />
+          <Property Name="SwVersion" Type="nvarchar(max)" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="ProductVersion" Type="nvarchar(max)" />
+          <Property Name="CopyRight" Type="nvarchar(max)" />
+          <Property Name="Size" Type="nvarchar(max)" />
+          <Property Name="SwDateModified" Type="datetime" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="SerialNo" Type="nvarchar(max)" />
+          <Property Name="LicenceNo" Type="nvarchar(max)" />
+          <Property Name="LicenceType" Type="nvarchar(max)" />
+          <Property Name="InstalledDate" Type="datetime" />
+          <Property Name="PathName" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Running">
+          <Key>
+            <PropertyRef Name="SwRunningId" />
+          </Key>
+          <Property Name="SwRunningId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwMasterInfoId" Type="int" Nullable="false" />
+          <Property Name="SwName" Type="nvarchar(max)" />
+          <Property Name="SwDescription" Type="nvarchar(max)" />
+          <Property Name="SwType" Type="nvarchar(max)" />
+          <Property Name="SwVersion" Type="nvarchar(max)" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="ProductVersion" Type="nvarchar(max)" />
+          <Property Name="CopyRight" Type="nvarchar(max)" />
+          <Property Name="Size" Type="nvarchar(max)" />
+          <Property Name="SwDateModified" Type="datetime" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="SerialNo" Type="nvarchar(max)" />
+          <Property Name="LicenceNo" Type="nvarchar(max)" />
+          <Property Name="LicenceType" Type="nvarchar(max)" />
+          <Property Name="InstalledDate" Type="datetime" />
+          <Property Name="PathName" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Services">
+          <Key>
+            <PropertyRef Name="SwServiceId" />
+          </Key>
+          <Property Name="SwServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwMasterInfoId" Type="int" Nullable="false" />
+          <Property Name="Caption" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="PathName" Type="nvarchar(max)" />
+          <Property Name="ServiceType" Type="nvarchar(max)" />
+          <Property Name="Started" Type="bit" />
+          <Property Name="StartMode" Type="nvarchar(max)" />
+          <Property Name="StartName" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hw_Type">
+          <Key>
+            <PropertyRef Name="HwTypeId" />
+          </Key>
+          <Property Name="HwTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HwTypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prb_ADConnectionFailure">
+          <Key>
+            <PropertyRef Name="FailureId" />
+          </Key>
+          <Property Name="FailureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FailureReason" Type="varchar" MaxLength="200" />
+          <Property Name="SettingId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prb_Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleId" />
+          </Key>
+          <Property Name="ScheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="SettingId" Type="int" />
+          <Property Name="StartDateTime" Type="datetime" />
+          <Property Name="EndDateTime" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prb_Setting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="DomainType" Type="varchar" MaxLength="50" />
+          <Property Name="DomainName" Type="varchar" MaxLength="50" />
+          <Property Name="DomainAdminUser" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="WindowsAccess" Type="bit" />
+          <Property Name="MacAccess" Type="bit" />
+          <Property Name="LinuxAccess" Type="bit" />
+          <Property Name="PrintersAccess" Type="bit" />
+          <Property Name="RoutersSwitchesAccess" Type="bit" />
+          <Property Name="OthersAccess" Type="bit" />
+          <Property Name="HardwareDetail" Type="bit" />
+          <Property Name="SoftwareDetail" Type="bit" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsRead" Type="int" />
+          <Property Name="ProbeRunningDomain" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProbeRunningMachine" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Prb_Site">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prb_SiteCredential">
+          <Key>
+            <PropertyRef Name="SiteCredentialId" />
+          </Key>
+          <Property Name="SiteCredentialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="HwTypeId" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prb_Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK__Prb_ADCon__Setti__06ED0088">
+          <End Role="Prb_Setting" Type="Self.Prb_Setting" Multiplicity="1" />
+          <End Role="Prb_ADConnectionFailure" Type="Self.Prb_ADConnectionFailure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Setting">
+              <PropertyRef Name="SettingId" />
+            </Principal>
+            <Dependent Role="Prb_ADConnectionFailure">
+              <PropertyRef Name="SettingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_DetailInfo_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_DetailInfo" Type="Self.Hw_DetailInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_DetailInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_IpMacAddress_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_IpMacAddress" Type="Self.Hw_IpMacAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_IpMacAddress">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Hw_Type">
+          <End Role="Hw_Type" Type="Self.Hw_Type" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_Type">
+              <PropertyRef Name="HwTypeId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="HwTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Prb_Schedule">
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Schedule">
+              <PropertyRef Name="ScheduleId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="ScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Installed_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Installed" Type="Self.Hw_Sw_Installed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Installed">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Running_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Running" Type="Self.Hw_Sw_Running" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Running">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Services_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Services" Type="Self.Hw_Sw_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Services">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_Schedule_Prb_Setting">
+          <End Role="Prb_Setting" Type="Self.Prb_Setting" Multiplicity="0..1" />
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Setting">
+              <PropertyRef Name="SettingId" />
+            </Principal>
+            <Dependent Role="Prb_Schedule">
+              <PropertyRef Name="SettingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_Schedule_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Prb_Schedule">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_SiteCredential_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Prb_SiteCredential" Type="Self.Prb_SiteCredential" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Prb_SiteCredential">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_Hw_MasterInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HwMasterInfoId" Type="int" Mode="In" />
+          <Parameter Name="SiteId" Type="int" Mode="In" />
+          <Parameter Name="OperationId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Hw_MasterInfo_InsertData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MasterInfoXml" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="SP_Prb_Schedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ReturnValue" Type="int" Mode="InOut" />
+          <Parameter Name="ScheduleId" Type="int" Mode="In" />
+          <Parameter Name="SiteId" Type="int" Mode="In" />
+          <Parameter Name="StartDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="EndDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="StatusId" Type="int" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="OperationId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Prb_Setting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SettingId" Type="int" Mode="In" />
+          <Parameter Name="SiteId" Type="int" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="OperationId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Prb_Site" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SiteId" Type="int" Mode="In" />
+          <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="OperationId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SpClearAllTablesData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ProbeDBModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DomainUsersInfo" EntityType="Self.DomainUsersInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_DetailInfo" EntityType="Self.Hw_DetailInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_IpMacAddress" EntityType="Self.Hw_IpMacAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_MasterInfo" EntityType="Self.Hw_MasterInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_Sw_Installed" EntityType="Self.Hw_Sw_Installed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_Sw_Running" EntityType="Self.Hw_Sw_Running" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_Sw_Services" EntityType="Self.Hw_Sw_Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hw_Type" EntityType="Self.Hw_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_ADConnectionFailure" EntityType="Self.Prb_ADConnectionFailure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_Schedule" EntityType="Self.Prb_Schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_Setting" EntityType="Self.Prb_Setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_Site" EntityType="Self.Prb_Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_SiteCredential" EntityType="Self.Prb_SiteCredential" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prb_Status" EntityType="Self.Prb_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Prb_ADCon__Setti__06ED0088" Association="Self.FK__Prb_ADCon__Setti__06ED0088">
+            <End Role="Prb_Setting" EntitySet="Prb_Setting" />
+            <End Role="Prb_ADConnectionFailure" EntitySet="Prb_ADConnectionFailure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_DetailInfo_Hw_MasterInfo" Association="Self.FK_Hw_DetailInfo_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_DetailInfo" EntitySet="Hw_DetailInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_IpMacAddress_Hw_MasterInfo" Association="Self.FK_Hw_IpMacAddress_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_IpMacAddress" EntitySet="Hw_IpMacAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Hw_Type" Association="Self.FK_Hw_MasterInfo_Hw_Type">
+            <End Role="Hw_Type" EntitySet="Hw_Type" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Prb_Schedule" Association="Self.FK_Hw_MasterInfo_Prb_Schedule">
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Prb_Site" Association="Self.FK_Hw_MasterInfo_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Installed_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Installed_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Installed" EntitySet="Hw_Sw_Installed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Running_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Running_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Running" EntitySet="Hw_Sw_Running" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Services_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Services_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Services" EntitySet="Hw_Sw_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_Schedule_Prb_Setting" Association="Self.FK_Prb_Schedule_Prb_Setting">
+            <End Role="Prb_Setting" EntitySet="Prb_Setting" />
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_Schedule_Prb_Site" Association="Self.FK_Prb_Schedule_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_SiteCredential_Prb_Site" Association="Self.FK_Prb_SiteCredential_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Prb_SiteCredential" EntitySet="Prb_SiteCredential" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProbeDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="DomainUsersInfo">
+          <Key>
+            <PropertyRef Name="DomainUsersInfoId" />
+          </Key>
+          <Property Name="DomainUsersInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" />
+          <Property Name="ScheduleId" Type="Int32" Nullable="false" />
+          <Property Name="SamAccountName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GivenName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Enabled" Type="Boolean" />
+          <Property Name="EmployeeId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastPasswordSet" Type="DateTime" Precision="3" />
+          <Property Name="LastBadPasswordAttempt" Type="DateTime" Precision="3" />
+          <Property Name="LastLogon" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Hw_DetailInfo">
+          <Key>
+            <PropertyRef Name="HwDetailInfoId" />
+          </Key>
+          <Property Name="HwDetailInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HwManufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwSerialNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwModelNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwPartNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwSystemType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Processor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhysicalMemory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoOfProcessors" Type="Int32" />
+          <Property Name="NoOfLogicalProcessors" Type="Int32" />
+          <Property Name="DNSHostName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DomainName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentTimeZone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentLanguages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ListOfAvailableLanguages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InstalableLanguage" Type="Int32" />
+          <Property Name="BiosName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BiosVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BiosSerialNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BiosStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BiosDisplayConfiguration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VmInstanceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VmInstanceStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsVirtual" Type="Boolean" />
+          <Property Name="IsServerRole" Type="Boolean" />
+          <Property Name="WebServer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MailServer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CMS_SharePoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DatabaseServer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_DetailInfo_Hw_MasterInfo" FromRole="Hw_DetailInfo" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Hw_IpMacAddress">
+          <Key>
+            <PropertyRef Name="SwServiceId" />
+          </Key>
+          <Property Name="SwServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" />
+          <Property Name="Caption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IpAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IPEnabled" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MacAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_IpMacAddress_Hw_MasterInfo" FromRole="Hw_IpMacAddress" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Hw_MasterInfo">
+          <Key>
+            <PropertyRef Name="HwMasterInfoId" />
+          </Key>
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleId" Type="Int32" Nullable="false" />
+          <Property Name="HwTypeId" Type="Int32" Nullable="false" />
+          <Property Name="DevType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DevCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ComType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HwName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MacAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_DetailInfo" Relationship="Self.FK_Hw_DetailInfo_Hw_MasterInfo" FromRole="Hw_MasterInfo" ToRole="Hw_DetailInfo" />
+          <NavigationProperty Name="Hw_IpMacAddress" Relationship="Self.FK_Hw_IpMacAddress_Hw_MasterInfo" FromRole="Hw_MasterInfo" ToRole="Hw_IpMacAddress" />
+          <NavigationProperty Name="Hw_Type" Relationship="Self.FK_Hw_MasterInfo_Hw_Type" FromRole="Hw_MasterInfo" ToRole="Hw_Type" />
+          <NavigationProperty Name="Prb_Schedule" Relationship="Self.FK_Hw_MasterInfo_Prb_Schedule" FromRole="Hw_MasterInfo" ToRole="Prb_Schedule" />
+          <NavigationProperty Name="Prb_Site" Relationship="Self.FK_Hw_MasterInfo_Prb_Site" FromRole="Hw_MasterInfo" ToRole="Prb_Site" />
+          <NavigationProperty Name="Hw_Sw_Installed" Relationship="Self.FK_Hw_Sw_Installed_Hw_MasterInfo" FromRole="Hw_MasterInfo" ToRole="Hw_Sw_Installed" />
+          <NavigationProperty Name="Hw_Sw_Running" Relationship="Self.FK_Hw_Sw_Running_Hw_MasterInfo" FromRole="Hw_MasterInfo" ToRole="Hw_Sw_Running" />
+          <NavigationProperty Name="Hw_Sw_Services" Relationship="Self.FK_Hw_Sw_Services_Hw_MasterInfo" FromRole="Hw_MasterInfo" ToRole="Hw_Sw_Services" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Installed">
+          <Key>
+            <PropertyRef Name="SwInstalledId" />
+          </Key>
+          <Property Name="SwInstalledId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" />
+          <Property Name="SwName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CopyRight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwDateModified" Type="DateTime" Precision="3" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LicenceNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LicenceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InstalledDate" Type="DateTime" Precision="3" />
+          <Property Name="PathName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_Sw_Installed_Hw_MasterInfo" FromRole="Hw_Sw_Installed" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Running">
+          <Key>
+            <PropertyRef Name="SwRunningId" />
+          </Key>
+          <Property Name="SwRunningId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" />
+          <Property Name="SwName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductVersion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CopyRight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SwDateModified" Type="DateTime" Precision="3" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LicenceNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LicenceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InstalledDate" Type="DateTime" Precision="3" />
+          <Property Name="PathName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_Sw_Running_Hw_MasterInfo" FromRole="Hw_Sw_Running" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Hw_Sw_Services">
+          <Key>
+            <PropertyRef Name="SwServiceId" />
+          </Key>
+          <Property Name="SwServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwMasterInfoId" Type="Int32" Nullable="false" />
+          <Property Name="Caption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PathName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Started" Type="Boolean" />
+          <Property Name="StartMode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_Sw_Services_Hw_MasterInfo" FromRole="Hw_Sw_Services" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Hw_Type">
+          <Key>
+            <PropertyRef Name="HwTypeId" />
+          </Key>
+          <Property Name="HwTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HwTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_MasterInfo_Hw_Type" FromRole="Hw_Type" ToRole="Hw_MasterInfo" />
+        </EntityType>
+        <EntityType Name="Prb_Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleId" />
+          </Key>
+          <Property Name="ScheduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="SettingId" Type="Int32" />
+          <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_MasterInfo_Prb_Schedule" FromRole="Prb_Schedule" ToRole="Hw_MasterInfo" />
+          <NavigationProperty Name="Prb_Setting" Relationship="Self.FK_Prb_Schedule_Prb_Setting" FromRole="Prb_Schedule" ToRole="Prb_Setting" />
+          <NavigationProperty Name="Prb_Site" Relationship="Self.FK_Prb_Schedule_Prb_Site" FromRole="Prb_Schedule" ToRole="Prb_Site" />
+        </EntityType>
+        <EntityType Name="Prb_Setting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="DomainType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DomainName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DomainAdminUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WindowsAccess" Type="Boolean" />
+          <Property Name="MacAccess" Type="Boolean" />
+          <Property Name="LinuxAccess" Type="Boolean" />
+          <Property Name="PrintersAccess" Type="Boolean" />
+          <Property Name="RoutersSwitchesAccess" Type="Boolean" />
+          <Property Name="OthersAccess" Type="Boolean" />
+          <Property Name="HardwareDetail" Type="Boolean" />
+          <Property Name="SoftwareDetail" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Prb_Schedule" Relationship="Self.FK_Prb_Schedule_Prb_Setting" FromRole="Prb_Setting" ToRole="Prb_Schedule" />
+          <Property Name="IsRead" Type="Int32" />
+          <Property Name="ProbeRunningDomain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProbeRunningMachine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Prb_ADConnectionFailure" Relationship="ProbeDBModel.FK__Prb_ADCon__Setti__06ED0088" FromRole="Prb_Setting" ToRole="Prb_ADConnectionFailure" />
+        </EntityType>
+        <EntityType Name="Prb_Site">
+          <Key>
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="SiteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Hw_MasterInfo" Relationship="Self.FK_Hw_MasterInfo_Prb_Site" FromRole="Prb_Site" ToRole="Hw_MasterInfo" />
+          <NavigationProperty Name="Prb_Schedule" Relationship="Self.FK_Prb_Schedule_Prb_Site" FromRole="Prb_Site" ToRole="Prb_Schedule" />
+          <NavigationProperty Name="Prb_SiteCredential" Relationship="Self.FK_Prb_SiteCredential_Prb_Site" FromRole="Prb_Site" ToRole="Prb_SiteCredential" />
+        </EntityType>
+        <EntityType Name="Prb_SiteCredential">
+          <Key>
+            <PropertyRef Name="SiteCredentialId" />
+          </Key>
+          <Property Name="SiteCredentialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HwTypeId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Prb_Site" Relationship="Self.FK_Prb_SiteCredential_Prb_Site" FromRole="Prb_SiteCredential" ToRole="Prb_Site" />
+        </EntityType>
+        <EntityType Name="Prb_Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_DetailInfo_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_DetailInfo" Type="Self.Hw_DetailInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_DetailInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_IpMacAddress_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_IpMacAddress" Type="Self.Hw_IpMacAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_IpMacAddress">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Hw_Type">
+          <End Role="Hw_Type" Type="Self.Hw_Type" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_Type">
+              <PropertyRef Name="HwTypeId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="HwTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Prb_Schedule">
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Schedule">
+              <PropertyRef Name="ScheduleId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="ScheduleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_MasterInfo_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Hw_MasterInfo">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Installed_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Installed" Type="Self.Hw_Sw_Installed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Installed">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Running_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Running" Type="Self.Hw_Sw_Running" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Running">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hw_Sw_Services_Hw_MasterInfo">
+          <End Role="Hw_MasterInfo" Type="Self.Hw_MasterInfo" Multiplicity="1" />
+          <End Role="Hw_Sw_Services" Type="Self.Hw_Sw_Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hw_MasterInfo">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Principal>
+            <Dependent Role="Hw_Sw_Services">
+              <PropertyRef Name="HwMasterInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_Schedule_Prb_Setting">
+          <End Role="Prb_Setting" Type="Self.Prb_Setting" Multiplicity="0..1" />
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Setting">
+              <PropertyRef Name="SettingId" />
+            </Principal>
+            <Dependent Role="Prb_Schedule">
+              <PropertyRef Name="SettingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_Schedule_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Prb_Schedule" Type="Self.Prb_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Prb_Schedule">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prb_SiteCredential_Prb_Site">
+          <End Role="Prb_Site" Type="Self.Prb_Site" Multiplicity="1" />
+          <End Role="Prb_SiteCredential" Type="Self.Prb_SiteCredential" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Site">
+              <PropertyRef Name="SiteId" />
+            </Principal>
+            <Dependent Role="Prb_SiteCredential">
+              <PropertyRef Name="SiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ProbeDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="DomainUsersInfoes" EntityType="Self.DomainUsersInfo" />
+          <EntitySet Name="Hw_DetailInfo" EntityType="Self.Hw_DetailInfo" />
+          <EntitySet Name="Hw_IpMacAddress" EntityType="Self.Hw_IpMacAddress" />
+          <EntitySet Name="Hw_MasterInfo" EntityType="Self.Hw_MasterInfo" />
+          <EntitySet Name="Hw_Sw_Installed" EntityType="Self.Hw_Sw_Installed" />
+          <EntitySet Name="Hw_Sw_Running" EntityType="Self.Hw_Sw_Running" />
+          <EntitySet Name="Hw_Sw_Services" EntityType="Self.Hw_Sw_Services" />
+          <EntitySet Name="Hw_Type" EntityType="Self.Hw_Type" />
+          <EntitySet Name="Prb_Schedule" EntityType="Self.Prb_Schedule" />
+          <EntitySet Name="Prb_Setting" EntityType="Self.Prb_Setting" />
+          <EntitySet Name="Prb_Site" EntityType="Self.Prb_Site" />
+          <EntitySet Name="Prb_SiteCredential" EntityType="Self.Prb_SiteCredential" />
+          <EntitySet Name="Prb_Status" EntityType="Self.Prb_Status" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_DetailInfo_Hw_MasterInfo" Association="Self.FK_Hw_DetailInfo_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_DetailInfo" EntitySet="Hw_DetailInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_IpMacAddress_Hw_MasterInfo" Association="Self.FK_Hw_IpMacAddress_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_IpMacAddress" EntitySet="Hw_IpMacAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Hw_Type" Association="Self.FK_Hw_MasterInfo_Hw_Type">
+            <End Role="Hw_Type" EntitySet="Hw_Type" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Prb_Schedule" Association="Self.FK_Hw_MasterInfo_Prb_Schedule">
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_MasterInfo_Prb_Site" Association="Self.FK_Hw_MasterInfo_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Installed_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Installed_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Installed" EntitySet="Hw_Sw_Installed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Running_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Running_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Running" EntitySet="Hw_Sw_Running" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hw_Sw_Services_Hw_MasterInfo" Association="Self.FK_Hw_Sw_Services_Hw_MasterInfo">
+            <End Role="Hw_MasterInfo" EntitySet="Hw_MasterInfo" />
+            <End Role="Hw_Sw_Services" EntitySet="Hw_Sw_Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_Schedule_Prb_Setting" Association="Self.FK_Prb_Schedule_Prb_Setting">
+            <End Role="Prb_Setting" EntitySet="Prb_Setting" />
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_Schedule_Prb_Site" Association="Self.FK_Prb_Schedule_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Prb_Schedule" EntitySet="Prb_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prb_SiteCredential_Prb_Site" Association="Self.FK_Prb_SiteCredential_Prb_Site">
+            <End Role="Prb_Site" EntitySet="Prb_Site" />
+            <End Role="Prb_SiteCredential" EntitySet="Prb_SiteCredential" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="SP_Hw_MasterInfo" ReturnType="Collection(ProbeDBModel.SP_Hw_MasterInfo_Result)">
+            <Parameter Name="HwMasterInfoId" Mode="In" Type="Int32" />
+            <Parameter Name="SiteId" Mode="In" Type="Int32" />
+            <Parameter Name="OperationId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Hw_MasterInfo_InsertData">
+          <Parameter Name="MasterInfoXml" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Prb_Schedule">
+            <Parameter Name="ReturnValue" Mode="InOut" Type="Int32" />
+            <Parameter Name="ScheduleId" Mode="In" Type="Int32" />
+            <Parameter Name="SiteId" Mode="In" Type="Int32" />
+            <Parameter Name="StartDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="StatusId" Mode="In" Type="Int32" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="OperationId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Prb_Setting" ReturnType="Collection(ProbeDBModel.SP_Prb_Setting_Result)">
+            <Parameter Name="SettingId" Mode="In" Type="Int32" />
+            <Parameter Name="SiteId" Mode="In" Type="Int32" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="OperationId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Prb_Site" ReturnType="Collection(ProbeDBModel.SP_Prb_Site_Result)">
+            <Parameter Name="SiteId" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerName" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="OperationId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SpClearAllTablesData" ReturnType="Collection(ProbeDBModel.SpClearAllTablesData_Result)" />
+          <EntitySet Name="Prb_ADConnectionFailure" EntityType="ProbeDBModel.Prb_ADConnectionFailure" />
+          <AssociationSet Name="FK__Prb_ADCon__Setti__06ED0088" Association="ProbeDBModel.FK__Prb_ADCon__Setti__06ED0088">
+            <End Role="Prb_Setting" EntitySet="Prb_Setting" />
+            <End Role="Prb_ADConnectionFailure" EntitySet="Prb_ADConnectionFailure" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="SP_Hw_MasterInfo_Result">
+          <Property Type="Int32" Name="HwMasterInfoId" Nullable="false" />
+          <Property Type="Int32" Name="SiteId" Nullable="false" />
+          <Property Type="Int32" Name="ScheduleId" Nullable="false" />
+          <Property Type="Int32" Name="HwTypeId" Nullable="false" />
+          <Property Type="String" Name="HwName" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MacAddress" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="StatusId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Prb_Setting_Result">
+          <Property Type="Int32" Name="SettingId" Nullable="false" />
+          <Property Type="Int32" Name="SiteId" Nullable="false" />
+          <Property Type="Boolean" Name="WindowsAccess" Nullable="true" />
+          <Property Type="Boolean" Name="MacAccess" Nullable="true" />
+          <Property Type="Boolean" Name="LinuxAccess" Nullable="true" />
+          <Property Type="Boolean" Name="PrintersAccess" Nullable="true" />
+          <Property Type="Boolean" Name="RoutersSwitchesAccess" Nullable="true" />
+          <Property Type="Boolean" Name="OthersAccess" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Prb_Site_Result">
+          <Property Type="Int32" Name="SiteId" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SpClearAllTablesData_Result">
+          <Property Type="Int32" Name="SettingId" Nullable="false" />
+          <Property Type="Int32" Name="SiteId" Nullable="false" />
+          <Property Type="String" Name="DomainType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DomainName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DomainAdminUser" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="WindowsAccess" Nullable="true" />
+          <Property Type="Boolean" Name="MacAccess" Nullable="true" />
+          <Property Type="Boolean" Name="LinuxAccess" Nullable="true" />
+          <Property Type="Boolean" Name="PrintersAccess" Nullable="true" />
+          <Property Type="Boolean" Name="RoutersSwitchesAccess" Nullable="true" />
+          <Property Type="Boolean" Name="OthersAccess" Nullable="true" />
+          <Property Type="Boolean" Name="HardwareDetail" Nullable="true" />
+          <Property Type="Boolean" Name="SoftwareDetail" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="ModifiedBy" Nullable="true" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Prb_ADConnectionFailure">
+          <Key>
+            <PropertyRef Name="FailureId" />
+          </Key>
+          <Property Name="FailureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FailureReason" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SettingId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Prb_Setting" Relationship="ProbeDBModel.FK__Prb_ADCon__Setti__06ED0088" FromRole="Prb_ADConnectionFailure" ToRole="Prb_Setting" />
+        </EntityType>
+        <Association Name="FK__Prb_ADCon__Setti__06ED0088">
+          <End Type="ProbeDBModel.Prb_Setting" Role="Prb_Setting" Multiplicity="1" />
+          <End Type="ProbeDBModel.Prb_ADConnectionFailure" Role="Prb_ADConnectionFailure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prb_Setting">
+              <PropertyRef Name="SettingId" />
+            </Principal>
+            <Dependent Role="Prb_ADConnectionFailure">
+              <PropertyRef Name="SettingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProbeDBModelStoreContainer" CdmEntityContainer="ProbeDBEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="ProbeDBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="ProbeDBModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="ProbeDBModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="ProbeDBModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="ProbeDBModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomainUsersInfoes">
+            <EntityTypeMapping TypeName="ProbeDBModel.DomainUsersInfo">
+              <MappingFragment StoreEntitySet="DomainUsersInfo">
+                <ScalarProperty Name="DomainUsersInfoId" ColumnName="DomainUsersInfoId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+                <ScalarProperty Name="SamAccountName" ColumnName="SamAccountName" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GivenName" ColumnName="GivenName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="LastPasswordSet" ColumnName="LastPasswordSet" />
+                <ScalarProperty Name="LastBadPasswordAttempt" ColumnName="LastBadPasswordAttempt" />
+                <ScalarProperty Name="LastLogon" ColumnName="LastLogon" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_DetailInfo">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_DetailInfo">
+              <MappingFragment StoreEntitySet="Hw_DetailInfo">
+                <ScalarProperty Name="HwDetailInfoId" ColumnName="HwDetailInfoId" />
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="HwManufacturer" ColumnName="HwManufacturer" />
+                <ScalarProperty Name="HwCaption" ColumnName="HwCaption" />
+                <ScalarProperty Name="HwDescription" ColumnName="HwDescription" />
+                <ScalarProperty Name="HwSerialNo" ColumnName="HwSerialNo" />
+                <ScalarProperty Name="HwStatus" ColumnName="HwStatus" />
+                <ScalarProperty Name="HwVersion" ColumnName="HwVersion" />
+                <ScalarProperty Name="HwModelNo" ColumnName="HwModelNo" />
+                <ScalarProperty Name="HwPartNo" ColumnName="HwPartNo" />
+                <ScalarProperty Name="HwSystemType" ColumnName="HwSystemType" />
+                <ScalarProperty Name="OS" ColumnName="OS" />
+                <ScalarProperty Name="Processor" ColumnName="Processor" />
+                <ScalarProperty Name="PhysicalMemory" ColumnName="PhysicalMemory" />
+                <ScalarProperty Name="NoOfProcessors" ColumnName="NoOfProcessors" />
+                <ScalarProperty Name="NoOfLogicalProcessors" ColumnName="NoOfLogicalProcessors" />
+                <ScalarProperty Name="DNSHostName" ColumnName="DNSHostName" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="CurrentTimeZone" ColumnName="CurrentTimeZone" />
+                <ScalarProperty Name="CurrentLanguages" ColumnName="CurrentLanguages" />
+                <ScalarProperty Name="ListOfAvailableLanguages" ColumnName="ListOfAvailableLanguages" />
+                <ScalarProperty Name="InstalableLanguage" ColumnName="InstalableLanguage" />
+                <ScalarProperty Name="BiosName" ColumnName="BiosName" />
+                <ScalarProperty Name="BiosVersion" ColumnName="BiosVersion" />
+                <ScalarProperty Name="BiosSerialNo" ColumnName="BiosSerialNo" />
+                <ScalarProperty Name="BiosStatus" ColumnName="BiosStatus" />
+                <ScalarProperty Name="BiosDisplayConfiguration" ColumnName="BiosDisplayConfiguration" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="VmInstanceName" ColumnName="VmInstanceName" />
+                <ScalarProperty Name="VmInstanceStatus" ColumnName="VmInstanceStatus" />
+                <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+                <ScalarProperty Name="IsServerRole" ColumnName="IsServerRole" />
+                <ScalarProperty Name="WebServer" ColumnName="WebServer" />
+                <ScalarProperty Name="MailServer" ColumnName="MailServer" />
+                <ScalarProperty Name="CMS_SharePoint" ColumnName="CMS_SharePoint" />
+                <ScalarProperty Name="DatabaseServer" ColumnName="DatabaseServer" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_IpMacAddress">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_IpMacAddress">
+              <MappingFragment StoreEntitySet="Hw_IpMacAddress">
+                <ScalarProperty Name="SwServiceId" ColumnName="SwServiceId" />
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="IPEnabled" ColumnName="IPEnabled" />
+                <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_MasterInfo">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_MasterInfo">
+              <MappingFragment StoreEntitySet="Hw_MasterInfo">
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+                <ScalarProperty Name="HwTypeId" ColumnName="HwTypeId" />
+                <ScalarProperty Name="DevType" ColumnName="DevType" />
+                <ScalarProperty Name="DevCategory" ColumnName="DevCategory" />
+                <ScalarProperty Name="ComType" ColumnName="ComType" />
+                <ScalarProperty Name="HwName" ColumnName="HwName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_Sw_Installed">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_Sw_Installed">
+              <MappingFragment StoreEntitySet="Hw_Sw_Installed">
+                <ScalarProperty Name="SwInstalledId" ColumnName="SwInstalledId" />
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="SwName" ColumnName="SwName" />
+                <ScalarProperty Name="SwDescription" ColumnName="SwDescription" />
+                <ScalarProperty Name="SwType" ColumnName="SwType" />
+                <ScalarProperty Name="SwVersion" ColumnName="SwVersion" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="CopyRight" ColumnName="CopyRight" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SwDateModified" ColumnName="SwDateModified" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="LicenceNo" ColumnName="LicenceNo" />
+                <ScalarProperty Name="LicenceType" ColumnName="LicenceType" />
+                <ScalarProperty Name="InstalledDate" ColumnName="InstalledDate" />
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_Sw_Running">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_Sw_Running">
+              <MappingFragment StoreEntitySet="Hw_Sw_Running">
+                <ScalarProperty Name="SwRunningId" ColumnName="SwRunningId" />
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="SwName" ColumnName="SwName" />
+                <ScalarProperty Name="SwDescription" ColumnName="SwDescription" />
+                <ScalarProperty Name="SwType" ColumnName="SwType" />
+                <ScalarProperty Name="SwVersion" ColumnName="SwVersion" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="CopyRight" ColumnName="CopyRight" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="SwDateModified" ColumnName="SwDateModified" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+                <ScalarProperty Name="LicenceNo" ColumnName="LicenceNo" />
+                <ScalarProperty Name="LicenceType" ColumnName="LicenceType" />
+                <ScalarProperty Name="InstalledDate" ColumnName="InstalledDate" />
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_Sw_Services">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_Sw_Services">
+              <MappingFragment StoreEntitySet="Hw_Sw_Services">
+                <ScalarProperty Name="SwServiceId" ColumnName="SwServiceId" />
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="Started" ColumnName="Started" />
+                <ScalarProperty Name="StartMode" ColumnName="StartMode" />
+                <ScalarProperty Name="StartName" ColumnName="StartName" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hw_Type">
+            <EntityTypeMapping TypeName="ProbeDBModel.Hw_Type">
+              <MappingFragment StoreEntitySet="Hw_Type">
+                <ScalarProperty Name="HwTypeId" ColumnName="HwTypeId" />
+                <ScalarProperty Name="HwTypeName" ColumnName="HwTypeName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prb_Schedule">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_Schedule">
+              <MappingFragment StoreEntitySet="Prb_Schedule">
+                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prb_Setting">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_Setting">
+              <MappingFragment StoreEntitySet="Prb_Setting">
+                <ScalarProperty Name="ProbeRunningMachine" ColumnName="ProbeRunningMachine" />
+                <ScalarProperty Name="ProbeRunningDomain" ColumnName="ProbeRunningDomain" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="DomainAdminUser" ColumnName="DomainAdminUser" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="WindowsAccess" ColumnName="WindowsAccess" />
+                <ScalarProperty Name="MacAccess" ColumnName="MacAccess" />
+                <ScalarProperty Name="LinuxAccess" ColumnName="LinuxAccess" />
+                <ScalarProperty Name="PrintersAccess" ColumnName="PrintersAccess" />
+                <ScalarProperty Name="RoutersSwitchesAccess" ColumnName="RoutersSwitchesAccess" />
+                <ScalarProperty Name="OthersAccess" ColumnName="OthersAccess" />
+                <ScalarProperty Name="HardwareDetail" ColumnName="HardwareDetail" />
+                <ScalarProperty Name="SoftwareDetail" ColumnName="SoftwareDetail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prb_Site">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_Site">
+              <MappingFragment StoreEntitySet="Prb_Site">
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prb_SiteCredential">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_SiteCredential">
+              <MappingFragment StoreEntitySet="Prb_SiteCredential">
+                <ScalarProperty Name="SiteCredentialId" ColumnName="SiteCredentialId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="HwTypeId" ColumnName="HwTypeId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prb_Status">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_Status">
+              <MappingFragment StoreEntitySet="Prb_Status">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ProbeDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="ProbeDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="SP_Hw_MasterInfo" FunctionName="ProbeDBModel.Store.SP_Hw_MasterInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProbeDBModel.SP_Hw_MasterInfo_Result">
+                <ScalarProperty Name="HwMasterInfoId" ColumnName="HwMasterInfoId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+                <ScalarProperty Name="HwTypeId" ColumnName="HwTypeId" />
+                <ScalarProperty Name="HwName" ColumnName="HwName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Hw_MasterInfo_InsertData" FunctionName="ProbeDBModel.Store.SP_Hw_MasterInfo_InsertData" />
+          <FunctionImportMapping FunctionImportName="SP_Prb_Schedule" FunctionName="ProbeDBModel.Store.SP_Prb_Schedule" />
+          <FunctionImportMapping FunctionImportName="SP_Prb_Setting" FunctionName="ProbeDBModel.Store.SP_Prb_Setting">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProbeDBModel.SP_Prb_Setting_Result">
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="WindowsAccess" ColumnName="WindowsAccess" />
+                <ScalarProperty Name="MacAccess" ColumnName="MacAccess" />
+                <ScalarProperty Name="LinuxAccess" ColumnName="LinuxAccess" />
+                <ScalarProperty Name="PrintersAccess" ColumnName="PrintersAccess" />
+                <ScalarProperty Name="RoutersSwitchesAccess" ColumnName="RoutersSwitchesAccess" />
+                <ScalarProperty Name="OthersAccess" ColumnName="OthersAccess" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Prb_Site" FunctionName="ProbeDBModel.Store.SP_Prb_Site">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProbeDBModel.SP_Prb_Site_Result">
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ProbeDBModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ProbeDBModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="SpClearAllTablesData" FunctionName="ProbeDBModel.Store.SpClearAllTablesData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProbeDBModel.SpClearAllTablesData_Result">
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="DomainAdminUser" ColumnName="DomainAdminUser" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="WindowsAccess" ColumnName="WindowsAccess" />
+                <ScalarProperty Name="MacAccess" ColumnName="MacAccess" />
+                <ScalarProperty Name="LinuxAccess" ColumnName="LinuxAccess" />
+                <ScalarProperty Name="PrintersAccess" ColumnName="PrintersAccess" />
+                <ScalarProperty Name="RoutersSwitchesAccess" ColumnName="RoutersSwitchesAccess" />
+                <ScalarProperty Name="OthersAccess" ColumnName="OthersAccess" />
+                <ScalarProperty Name="HardwareDetail" ColumnName="HardwareDetail" />
+                <ScalarProperty Name="SoftwareDetail" ColumnName="SoftwareDetail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Prb_ADConnectionFailure">
+            <EntityTypeMapping TypeName="ProbeDBModel.Prb_ADConnectionFailure">
+              <MappingFragment StoreEntitySet="Prb_ADConnectionFailure">
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="FailureReason" ColumnName="FailureReason" />
+                <ScalarProperty Name="FailureId" ColumnName="FailureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
